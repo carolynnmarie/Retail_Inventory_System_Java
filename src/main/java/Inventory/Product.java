@@ -1,5 +1,7 @@
-import Tags.DepartmentTag;
-import Tags.ProductTypeTag;
+package Inventory;
+
+import Inventory.Tags.DepartmentTag;
+import Inventory.Tags.ProductTypeTag;
 import java.util.*;
 
 public class Product {
@@ -24,12 +26,14 @@ public class Product {
         this.sales = new ArrayList<>();
     }
 
-    public Product(String name, String size, String color, ArrayList<Prices> purchases, ArrayList<Prices> sales){
+    public Product(String name, String size, String color,DepartmentTag department,ProductTypeTag productType, ArrayList<Prices> purchases, ArrayList<Prices> sales){
         this.name = name;
         this.size = size;
         this.color = color;
         this.purchases = purchases;
         this.sales = sales;
+        this.productType = productType;
+        this.department = department;
     }
 
     public String getName() {
@@ -108,7 +112,7 @@ public class Product {
         return totalS-totalP;
     }
 
-    public int getNumberOfTotalSales(){
+    public int getTotalSales(){
         int salesNumb = 0;
         for(Prices sale1: sales){
             salesNumb += sale1.getQuantity();

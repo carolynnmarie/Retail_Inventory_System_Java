@@ -1,4 +1,4 @@
-package Tags;
+package Inventory.Tags;
 
 public class DepartmentTag {
 
